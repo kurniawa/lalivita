@@ -1,0 +1,179 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://unpkg.com/tailwindcss/dist/base.css
+ */
+@tailwind base;
+
+/**
+ * Remove the default box-shadow for invalid elements to prevent
+ * inputs in Livewire components showing with a
+ * red border by default in Firefox.
+ *
+ * See: https://github.com/laravel-frontend-presets/tall/issues/7
+ */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    box-shadow: none;
+}
+
+// body * {
+//     font-size: 0.65rem;
+// }
+
+/**
+ * This injects any component classes registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ */
+.btn-dd {
+    @apply px-3 py-2 text-xs font-semibold bg-violet-500 text-white hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300;
+}
+.btn-dd-sm {
+    @apply px-2 py-1 text-[0.65rem] font-semibold bg-violet-500 text-white hover:bg-violet-600 active:bg-violet-700 focus:ring focus:ring-violet-300;
+}
+.btn-indigo {
+    @apply px-3 py-2 text-xs font-semibold bg-indigo-500 text-white hover:bg-indigo-600 active:bg-indigo-700 focus:ring focus:ring-indigo-300;
+}
+.btn-indigo-sm {
+    @apply px-2 py-1 text-[0.65rem] font-semibold bg-indigo-500 text-white hover:bg-indigo-600 active:bg-indigo-700 focus:ring focus:ring-indigo-300;
+}
+.btn-danger {
+    @apply px-3 py-2 text-xs font-semibold bg-pink-500 text-white hover:bg-pink-600 active:bg-pink-700 focus:ring focus:ring-pink-300;
+}
+.btn-danger-sm {
+    @apply px-2 py-1 text-[0.65rem] font-semibold bg-pink-500 text-white hover:bg-pink-600 active:bg-pink-700 focus:ring focus:ring-pink-300;
+}
+/*Form*/
+.input {
+    @apply border-slate-400 shadow rounded w-full px-3 py-2 block text-xs placeholder:text-slate-400 focus:outline-none focus:border-none focus:ring-blue-500 invalid:text-pink-700 invalid:focus:ring-pink-700;
+}
+.form-select {
+    @apply border-slate-300 py-1 rounded text-xs;
+}
+.alert-success {
+    @apply font-semibold w-full px-3 py-2 rounded bg-emerald-200 text-emerald-600 opacity-70;
+}
+.alert-warning {
+    @apply font-semibold w-full px-3 py-2 rounded bg-orange-200 text-orange-600 opacity-70;
+}
+.is-invalid {
+    @apply text-pink-700 focus:ring-pink-700;
+}
+.invalid-feedback {
+    @apply w-full px-2 py-1 rounded text-pink-600;
+}
+/*Table - Simple*/
+.table-simple {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table-simple caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+}
+
+.table-simple tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+}
+
+.table-simple th,
+.table-simple td {
+    padding: 0.625em;
+    text-align: center;
+}
+
+.table-simple th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .table-simple {
+        border: 0;
+    }
+
+    .table-simple caption {
+        font-size: 1.3em;
+    }
+
+    .table-simple thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .table-simple tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    .table-simple td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    .table-simple td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a .table-simple
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .table-simple td:last-child {
+        border-bottom: 0;
+    }
+}
+/*End: Table - Simple*/
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ */
+
+[x-cloak] {
+    display: none;
+}
