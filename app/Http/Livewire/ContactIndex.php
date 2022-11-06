@@ -46,6 +46,7 @@ class ContactIndex extends Component
 
     public function handleContactUpdated($_success)
     {
+        $this->mode="create";
         session()->flash('_success',$_success);
     }
 
