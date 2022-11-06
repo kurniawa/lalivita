@@ -48,3 +48,14 @@
     {{ $contacts->links() }}
 
 </div>
+{{--
+    mysql -u doadmin -p AVNS_Ru8VM4etI8nfSjJT6c6 -h db-mysql-sgp1-00853-do-user-12814545-0.b.db.ondigitalocean.com -P 25060 < <local-pg-dump-path>
+
+    mysql -u doadmin -p AVNS_Ru8VM4etI8nfSjJT6c6 -h db-mysql-sgp1-00853-do-user-12814545-0.b.db.ondigitalocean.com -P 25060 -D lalivita
+
+    mysql -u doadmin -p -h mysql-test-do-user-4915853-0.db.ondigitalocean.com -P 25060 your_database_name \ < /path/to/database_file_name.sql
+
+    mysql -u doadmin -p -h db-mysql-sgp1-00853-do-user-12814545-0.b.db.ondigitalocean.com -P 25060 lalivita \ < /home/kasepisan/Downloads tall-test.sql
+    mysql -u doadmin -p -h db-mysql-sgp1-00853-do-user-12814545-0.b.db.ondigitalocean.com -P 25060 lalivita < /home/kasepisan/Downloads tall-test.sql
+
+ --}}
