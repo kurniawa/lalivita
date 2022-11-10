@@ -1,0 +1,9 @@
+---
+ 
+deployment:
+
+ tasks:
+ 
+ - export DEPLOYPATH=/home/u1608450/github-test.lalivita.space
+ 
+ - /usr/bin/rsync -Paz * $DEPLOYPATH --delete
